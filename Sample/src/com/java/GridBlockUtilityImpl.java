@@ -97,7 +97,7 @@ public class GridBlockUtilityImpl implements GridBlockUtility {
 			double totalDistance = largest * 2;
 			order.setTravelDistance(totalDistance);
 			int time = model.getDroneDispatchedTime().compareTo(order.getOrderTime());
-			if (order.getOrderTime().equals(model.getLastOrdersCheckedAt()) || model.isOrderTimeBefore()?order.getOrderTime().isBefore(model.getLastOrdersCheckedAt()):order.getOrderTime().isAfter(model.getLastOrdersCheckedAt()) && time>0) {
+			if (order.getOrderTime().equals(model.getLastOrdersCheckedAt()) || model.isOrderTimeBefore()?order.getOrderTime().isBefore(model.getLastOrdersCheckedAt()):order.getOrderTime().isAfter(model.getLastOrdersCheckedAt()) && time>0 && order.getOrderTime().isBefore(LocalTime.parse("22:00:00"))) {
 				order.setWaitingTimeinMinutes(minScorePromotors - totalDistance);
 				if (order.getWaitingTimeinMinutes() > 0) {
 					order.setOrderFlag("p");
