@@ -26,7 +26,7 @@ Implementation:
 	
 7) First we will sort the orders based on delivery time for the orders received before 6 AM.
 
-8) Again sort the orders based on waiting time so that assumed total waiting time must not altered.
+8) Again sort the orders based on waiting time so that assumed total waiting time must not altered which may impact the NPS score.
 
 9) While one delivery is in progress, we check for new orders and perform 6 and 7 steps again.
 
